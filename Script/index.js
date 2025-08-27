@@ -76,3 +76,13 @@ for (const callButton of callButtons) {
       historyDiv.append(newHistoryEntry);
    });
 }
+
+// Clear History Button
+const clearHistoryBtn = document.getElementById('clear-btn');
+clearHistoryBtn.addEventListener('click', function () {
+   const historyDiv = document.getElementById('History-div');
+   historyDiv.innerHTML = '';
+   const coinCount = document.getElementById('coin-count');
+   coinCount.innerText = 100;
+   
+});
