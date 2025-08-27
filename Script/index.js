@@ -17,7 +17,11 @@ console.log(copyItems);
 
 for (const copyItem of copyItems) {
    copyItem.addEventListener("click", function () {
-      alert("নম্বর কপি করা হয়েছে : ৯৯৯");
+      const phoneNumber = copyItem.parentNode.parentNode.childNodes[7].innerText;
+      console.log(phoneNumber);
+
+      navigator.clipboard.writeText(phoneNumber);
+      alert(`নম্বর কপি করা হয়েছে: ${phoneNumber}`);
       const copyCount = document.getElementById("copy-count").innerText;
       console.log(copyCount);
 
@@ -43,7 +47,7 @@ for (const callButton of callButtons) {
       
 
       if (Number(coinCount) < 20) {
-         alert('You Have No Enough Coins for Call.');
+         alert('You Have No Enough Coins for Call. Minimum 20 Coins needs to Call.');
          return;
       }
       alert(`Calling to ${serviceName} ${phoneNumber}...`);
@@ -72,5 +76,3 @@ for (const callButton of callButtons) {
       historyDiv.append(newHistoryEntry);
    });
 }
-
-
